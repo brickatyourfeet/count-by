@@ -23,7 +23,7 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         view.addSubview(collectionView)
-        collectionView.topAnchor.constraint(equalTo: view.topAnchor, constant: 40).isActive = true
+        collectionView.topAnchor.constraint(equalTo: view.topAnchor, constant: 90).isActive = true
         collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40).isActive = true
         collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40).isActive = true
         collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -40).isActive = true
@@ -40,7 +40,7 @@ class ViewController: UIViewController {
 extension ViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.frame.width/2.5, height: collectionView.frame.width/2.5)
+        return CGSize(width: collectionView.frame.width/2.12, height: collectionView.frame.width/2.35)
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 10
