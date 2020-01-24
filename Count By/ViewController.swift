@@ -55,8 +55,12 @@ extension ViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDa
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CustomCell
         //cell.backgroundColor = .blue
         
-        cell.smallLabel.text = String(indexPath.row + 1)
+        cell.smallLabel.text = " " + String(indexPath.row + 1)
         cell.smallLabel.sizeToFit()
+        
+        cell.bigLabel.text = String(indexPath.row + 1)
+        //cell.bigLabel.sizeToFit()
+        
         print(cell.smallLabel.text)
         return cell
     }
@@ -96,8 +100,14 @@ class CustomCell: UICollectionViewCell {
         smallLabel = UILabel(frame: self.frame)
 //        smallLabel.textAlignment = .left
         smallLabel.textColor = .white
+        
+        bigLabel = UILabel(frame: self.frame)
+        bigLabel.textColor = .white
+        bigLabel.textAlignment = .center
+        //bigLabel.font = UIFont(name:"serif", size: 9)
+        
         cellBackground.addSubview(smallLabel)
-//        cellBackground.addSubview(bigLabel)
+        cellBackground.addSubview(bigLabel)
         
         cellBackground.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
         cellBackground.leadingAnchor.constraint(equalTo: contentView.leadingAnchor).isActive = true
