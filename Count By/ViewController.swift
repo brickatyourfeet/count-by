@@ -59,13 +59,11 @@ extension ViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDa
         cell.smallLabel.sizeToFit()
         
         cell.bigLabel.text = String(indexPath.row + 1)
-        //cell.bigLabel.sizeToFit()
+        cell.bigLabel.sizeToFit()
         
         print(cell.smallLabel.text)
         return cell
     }
-    
-    
 }
 
 //can have a configureCell function that will do the logic for each one
@@ -98,17 +96,18 @@ class CustomCell: UICollectionViewCell {
         
         //add labels here
         smallLabel = UILabel(frame: self.frame)
-//        smallLabel.textAlignment = .left
+        smallLabel.textAlignment = .left
         smallLabel.textColor = .white
         
-        bigLabel = UILabel(frame: self.frame)
-        bigLabel.textColor = .white
+        bigLabel = UILabel(frame: cellBackground.frame)
+        bigLabel.textColor = .red
         bigLabel.textAlignment = .center
-        //bigLabel.font = UIFont(name:"serif", size: 9)
+//        bigLabel.font = UIFont(name:"serif", size: 50.0)
         
         cellBackground.addSubview(smallLabel)
         cellBackground.addSubview(bigLabel)
         
+
         cellBackground.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
         cellBackground.leadingAnchor.constraint(equalTo: contentView.leadingAnchor).isActive = true
         cellBackground.trailingAnchor.constraint(equalTo: contentView.trailingAnchor).isActive = true
